@@ -1,0 +1,19 @@
+<%- include('./includes/header.ejs') %>
+
+<div class="post-main-container">
+
+    <div class="sigle-post">
+        <div class="title-text">
+            <%= post[0].posttitle %>
+        </div>
+        <span>
+
+            <%= post[0].createdAt.toLocaleDateString() %>
+        </span>
+        <p>
+            <%= post[0].postdescription %>
+        </p>
+    </div>
+</div>
+
+<%- include('./includes/footer.ejs') %>

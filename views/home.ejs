@@ -1,0 +1,41 @@
+<%- include('./includes/header.ejs') %>
+<div class="home-container">
+    <div class="title-text">
+        Home Page
+    </div>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, voluptate facere repellendus omnis numquam rem
+        minus, nesciunt et veniam exercitationem aliquid eveniet possimus inventore, voluptates officiis labore suscipit
+        laborum. Cupiditate quam adipisci sint tempora sequi odio consequuntur sapiente, eum culpa ipsum a perferendis
+        amet qui. Tenetur excepturi adipisci beatae incidunt iure. Nostrum molestiae, saepe, perspiciatis provident
+        itaque repellat animi consectetur recusandae blanditiis non culpa commodi inventore fugit aspernatur ullam
+        quasi! Harum, id! Quae quasi, ipsa amet facere ab odit magni excepturi? Cumque, in quod aperiam laudantium
+        asperiores autem vitae. Autem repudiandae sunt ratione distinctio voluptatem aliquam quo ea totam reprehenderit.
+    </p>
+
+    <div class="box">
+
+        <% posts.forEach((post) => { %>
+
+        <div class="single-blog">
+            <div class="title">
+                <%= post.posttitle %>
+            </div>
+            <span>
+                <%= post.createdAt.toLocaleDateString(); %>
+            </span>
+            <div class="description">
+                <p>
+                    <%= post.postdescription.substring(0, 100) + "..." %>
+                    <a href="/posts/<%= post.posttitle %>">See More.</a>
+                </p>
+            </div>
+
+        </div>
+
+        <%  })  %>
+
+
+    </div>
+</div>
+<%- include('./includes/footer.ejs') %>
